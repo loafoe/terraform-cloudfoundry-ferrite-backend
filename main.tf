@@ -98,7 +98,7 @@ resource "cloudfoundry_route" "hsdp_func_gateway" {
 
 resource "cloudfoundry_service_instance" "database" {
   name         = "grafana-rds"
-  space        = data.cloudfoundry_space.space.id
+  space        = local.space_id
   service_plan = data.cloudfoundry_service.rds.service_plans[var.db_plan]
   json_params  = var.db_json_params
 }
