@@ -130,3 +130,21 @@ variable "base_url" {
   description = "base URL for iron service"
   default     = ""
 }
+
+variable "db_broker" {
+  type        = string
+  description = "The Database broker to use for requesting a PostgreSQL database"
+  default     = "hsdp-rds"
+}
+variable "db_plan" {
+  type        = string
+  description = "The Database plan to use"
+  default     = "postgres-micro-dev"
+}
+
+variable "db_json_params" {
+  type        = string
+  description = "Optional DB JSON params"
+  default     = "{}"
+}
+

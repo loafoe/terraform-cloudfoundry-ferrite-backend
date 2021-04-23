@@ -33,3 +33,7 @@ data "hsdp_config" "config" {
 data "cloudfoundry_domain" "domain" {
   name = data.hsdp_config.config.domain
 }
+
+data "cloudfoundry_service" "rds" {
+  name = var.db_broker
+}
