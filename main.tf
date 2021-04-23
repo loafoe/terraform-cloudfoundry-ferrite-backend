@@ -61,14 +61,14 @@ resource "cloudfoundry_app" "hsdp_func_gateway" {
       AUTH_IAM_CLIENT_SECRET : var.auth_iam_client_secret
       AUTH_TOKEN_TOKEN : random_password.password.result
       IRON_CONFIG : templatefile("${path.module}/templates/iron_config.json", {
-        cluster_id = "cluserid"
-        pubkey     = "pubkey-here"
+        cluster_id = "a1a34bd98a2b44ab9e919cad87826137"
+        pubkey     = "-----BEGIN RSA PUBLIC KEY----- MIICCgKCAgEAziySK3sU+4XvHSosRNmZhbVIJdLgynPXsnlSgHhbHbSVlushZ8DH N4+xwJKkijqglv/VtAlsyzH1ppWePjNsbwlqhd/vZxeXYHXWpfnH2vYkEd3+awkc mJB7t1Xb3iiAO6hIIWhaRsRhP19jhCH2foNNxtezv2II5kiMPlnTqvxu9I3Qjazh KQXF/bI13Yjw4cDqld2w0dOMdeb31XHxRIOMOH4X8biPWWzAc0p0MMQ4W2M7X8dx 92VojbUINwZEsSPM135gKL1PCULwnS6QCvYNkmzzjLTfT6iOna/Ze80dBEXwHFkL H5DolfSNXf7/3FjB2BHa64ejZlei3cFlmgNXUGiHUYqfUtjE2P27Cqn2LkQnGMeR k1nniSUgkmFBcCwPmxsrBhsJ0+1ubrplsO2upE9KElR2F7HrKrs9ddBxPA8bJKgC YOlMkG+0kRPCgl8CbSO04qR+pvZimJUYaftnXea/ylBWJ8SOtLgavIAT7eaUMFMQ DhMs5IIgFhHe/zAqnk1vM730bKky47Sc1HDuo3o47l/vRwo5ILDvP3zQepSZ4V3t sxn8LnnurOA9gM7A1cbzZX2g23Zgyfdd0/MsbJtdrnBOO2d6kaGEMzXrLEMqY19n CthjkObtOhPsp/4SXO/ruwlUaLmdzD+wyQH8MI8t9FirCX6dMx7OhhUCAwEAAQ== -----END RSA PUBLIC KEY-----"
         user_id    = "notused"
         email      = "notused"
         password   = "notused"
         token      = random_password.password.result
-        project    = "projectid"
-        project_id = "projectid"
+        project    = "ff6cfa39faee4928baee01bbddddd549"
+        project_id = "ff6cfa39faee4928baee01bbddddd549"
         base_url   = "https://${cloudfoundry_route.ferrite.endpoint}/"
       })
     }
