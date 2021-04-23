@@ -40,7 +40,7 @@ resource "cloudfoundry_app" "ferrite" {
 
 resource "cloudfoundry_app" "hsdp_func_gateway" {
   count        = var.enable_gateway ? 1 : 0
-  name         = "hsdp-func-gateway-${local.postfix_name}"
+  name         = "hsdp-func-gateway-ferrite-${local.postfix_name}"
   space        = local.space_id
   memory       = var.gateway_memory
   disk_quota   = var.gateway_disk_quota
@@ -91,13 +91,13 @@ resource "cloudfoundry_route" "hsdp_func_gateway" {
   count    = var.enable_gateway ? 1 : 0
   domain   = data.cloudfoundry_domain.app_domain.id
   space    = local.space_id
-  hostname = "hsdp-func-gateway-${local.postfix_name}"
+  hostname = "hsdp-func-gateway-ferrite-${local.postfix_name}"
 
   depends_on = [cloudfoundry_space_users.users]
 }
 
 resource "cloudfoundry_service_instance" "database" {
-  name         = "grafana-rds"
+  name         = "ferrite-rds"
   space        = local.space_id
   service_plan = data.cloudfoundry_service.rds.service_plans[var.db_plan]
   json_params  = var.db_json_params
