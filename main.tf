@@ -32,6 +32,10 @@ resource "cloudfoundry_app" "ferrite" {
     route = cloudfoundry_route.ferrite.id
   }
 
+  service_binding {
+    service_instance = cloudfoundry_service_instance.database.id
+  }
+
 }
 
 resource "cloudfoundry_app" "hsdp_func_gateway" {
