@@ -85,7 +85,7 @@ variable "function_gateway_image" {
 
 variable "ferrite_image" {
   description = "Image to use for Ferrite app. Use a v* tagged version to prevent automatic updates"
-  default     = "philipslabs/ferrite:v0.0.2"
+  default     = "philipslabs/ferrite:v0.0.4"
   type        = string
 }
 
