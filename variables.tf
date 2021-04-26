@@ -85,7 +85,7 @@ variable "function_gateway_image" {
 
 variable "ferrite_image" {
   description = "Image to use for Ferrite app. Use a v* tagged version to prevent automatic updates"
-  default     = "philipslabs/ferrite:v0.0.4"
+  default     = "philipslabs/ferrite:v0.0.16"
   type        = string
 }
 
@@ -142,3 +142,48 @@ variable "db_json_params" {
   default     = "{}"
 }
 
+variable "cartel_postfix" {
+  type        = string
+  description = "The Cartel postfix host component to use"
+  default     = "dev"
+}
+
+variable "volume_size" {
+  description = "The volume size to use in GB"
+  type        = number
+  default     = 20
+}
+
+variable "iops" {
+  description = "IOPS to provision for EBS storage"
+  type        = number
+  default     = 500
+}
+
+variable "instance_type" {
+  description = "The instance type to use"
+  type        = string
+  default     = "t3.medium"
+}
+
+variable "user_groups" {
+  description = "User groups to assign to cluster"
+  type        = list(string)
+  default     = []
+}
+
+variable "security_groups" {
+  description = "Security groups to assign to cluster"
+  type        = list(string)
+  default     = []
+}
+
+variable "cartel_user" {
+  description = "Cartel user to use for connections"
+  type        = string
+}
+
+variable "private_key" {
+  description = "Private key for SSH access"
+  type        = string
+}

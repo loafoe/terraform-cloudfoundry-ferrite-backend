@@ -37,3 +37,8 @@ data "cloudfoundry_domain" "domain" {
 data "cloudfoundry_service" "rds" {
   name = var.db_broker
 }
+
+data "hsdp_config" "gateway" {
+  region  = var.cf_region
+  service = "gateway"
+}
