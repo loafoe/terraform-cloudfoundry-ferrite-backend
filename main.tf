@@ -50,8 +50,8 @@ resource "hsdp_container_host" "worker" {
 
 resource "hsdp_container_host_exec" "worker" {
   triggers = {
-    instance_ids = hsdp_container_host.worker.id
-    bash         = file("${path.module}/templates/bootstrap-worker.sh")
+    instance_ids    = hsdp_container_host.worker.id
+    bash            = file("${path.module}/templates/bootstrap-worker.sh")
     docker_username = var.docker_username
     docker_password = var.docker_password
     docker_image    = var.ferrite_image
@@ -66,12 +66,12 @@ resource "hsdp_container_host_exec" "worker" {
   file {
     content = templatefile("${path.module}/templates/local.yml", {
       private_ip = hsdp_container_host.worker.private_ip
-      hostname = cloudfoundry_service_key.database_key.credentials["hostname"]
-      db_name = cloudfoundry_service_key.database_key.credentials["db_name"]
-      password = cloudfoundry_service_key.database_key.credentials["password"]
-      username = cloudfoundry_service_key.database_key.credentials["username"]
-      port = cloudfoundry_service_key.database_key.credentials["port"]
-      uri = cloudfoundry_service_key.database_key.credentials["uri"]
+      hostname   = cloudfoundry_service_key.database_key.credentials["hostname"]
+      db_name    = cloudfoundry_service_key.database_key.credentials["db_name"]
+      password   = cloudfoundry_service_key.database_key.credentials["password"]
+      username   = cloudfoundry_service_key.database_key.credentials["username"]
+      port       = cloudfoundry_service_key.database_key.credentials["port"]
+      uri        = cloudfoundry_service_key.database_key.credentials["uri"]
     })
     destination = "/home/${var.cartel_user}/local.yml"
     permissions = "0600"
