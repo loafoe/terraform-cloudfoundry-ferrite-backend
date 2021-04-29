@@ -79,13 +79,13 @@ variable "auth_iam_client_secret" {
 
 variable "function_gateway_image" {
   description = "Image to use for Function Gateway app. Use a v* tagged version to prevent automatic updates"
-  default     = "philipslabs/hsdp-func-gateway:v0.5.1"
+  default     = "philipslabs/hsdp-func-gateway:v0.6.0"
   type        = string
 }
 
 variable "ferrite_image" {
   description = "Image to use for Ferrite app. Use a v* tagged version to prevent automatic updates"
-  default     = "philipslabs/ferrite:v0.0.36"
+  default     = "philipslabs/ferrite:v0.1.2"
   type        = string
 }
 

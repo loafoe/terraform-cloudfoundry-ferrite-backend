@@ -1,16 +1,12 @@
 {
   "cluster_info": [
     {
-      "cluster_id": "${cluster_id}",
-      "pubkey": "${pubkey}",
-      "user_id": "${user_id}"
+      "cluster_id": "placeholder",
+      "pubkey": "placeholder"
     }
   ],
-  "email": "${email}",
-  "password": "${password}",
-  "project": "${project}",
-  "project_id": "${project_id}",
+  "project": "placeholder",
+  "project_id": "placeholder",
   "token": "${token}",
-  "user_id": "${user_id}",
   "base_url": "${base_url}"
 }
