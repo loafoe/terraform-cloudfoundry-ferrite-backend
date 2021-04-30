@@ -46,6 +46,7 @@ resource "hsdp_container_host" "worker" {
   instance_type   = var.instance_type
   user_groups     = var.user_groups
   security_groups = var.security_groups
+  subnet_type     = "public"
 }
 
 resource "hsdp_container_host_exec" "worker" {
@@ -119,8 +120,8 @@ resource "cloudfoundry_app" "hsdp_func_gateway" {
       AUTH_TOKEN_TOKEN : random_password.password.result
       BACKEND_TYPE : "ferrite"
       IRON_CONFIG : templatefile("${path.module}/templates/iron_config.json", {
-        token      = random_password.password.result
-        base_url   = "https://${cloudfoundry_route.ferrite.endpoint}/"
+        token    = random_password.password.result
+        base_url = "https://${cloudfoundry_route.ferrite.endpoint}/"
       })
     }
   )
