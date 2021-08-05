@@ -1,0 +1,10 @@
+services:
+  - name: postgresql
+    tags: [postgresql, service]
+    credentials:
+      uri: ${uri}
+      hostname: ${hostname}
+      port: ${port}
+      db_name: ${db_name}
+      username: ${username}
+      password: ${password}
