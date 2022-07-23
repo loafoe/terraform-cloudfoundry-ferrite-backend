@@ -49,7 +49,7 @@ resource "hsdp_container_host" "worker" {
   subnet_type     = "public"
 }
 
-resource "hsdp_container_host_exec" "worker" {
+resource "ssh_resource" "worker" {
   triggers = {
     instance_ids    = hsdp_container_host.worker.id
     bash            = file("${path.module}/templates/bootstrap-worker.sh")
